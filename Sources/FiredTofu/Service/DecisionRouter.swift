@@ -1,8 +1,8 @@
 import Foundation
 
+public typealias UpdatePercentClosure = ((Double) -> Void)
+
 public class DecisionRouter {
-    
-    public typealias UpdatePercentClosure = ((Double) -> Void)
     
     private var uploadClosureCluster: [String : UpdatePercentClosure] = [:]
 
