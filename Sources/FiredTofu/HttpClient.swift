@@ -6,10 +6,13 @@ public class HttpClient {
 	
 	public let router: DecisionRouter
 	
-	init(urlSession: URLSession = URLSession(configuration: .default)) {
+	public init(urlSession: URLSession = URLSession(configuration: .default)) {
 		self.router = DecisionRouter(with: Decisions.defaults(urlSession: urlSession))
 	}
-
+	
+	public init(decisionRouter: DecisionRouter) {
+		self.router = decisionRouter
+	}
 	
 	public func send<T: Request>(
 		_ request: T,

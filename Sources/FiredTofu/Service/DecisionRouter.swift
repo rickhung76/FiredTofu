@@ -18,7 +18,7 @@ public class DecisionRouter {
     /// If it fails to decode data inside ParseResultDecision,
     /// the decision will return APIError with APIErrorCode: "unableToDecode".
     ///
-    /// - defultDecisions = 
+    /// - defaultDecisions =
     /// -   [
     /// -       BuildRequestDecision(),
     /// -       SendRequestDecision(),
