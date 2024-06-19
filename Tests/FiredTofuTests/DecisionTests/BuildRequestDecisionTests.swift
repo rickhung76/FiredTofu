@@ -4,9 +4,7 @@ import XCTest
 
 class BuildRequestDecisionTests: XCTestCase {
     
-    struct TestResponseModel: Decodable {
-        
-    }
+    struct TestResponseModel: Decodable {}
     
 	class TestRequest: Request {
 		

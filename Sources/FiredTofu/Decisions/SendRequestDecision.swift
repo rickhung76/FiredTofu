@@ -32,7 +32,7 @@ public class SendRequestDecision: Decision, ProgressUpdatable {
         }
         
         guard request.isValid else {
-            let err = APIError(.unknownError)
+            let err = APIError(.deprecatedRequest)
             completion(.errored(err))
             return
         }

@@ -1,19 +1,21 @@
 import Foundation
 
 public enum APIErrorCode: Int {
-    case badRequest = 40000
-    case encodingFailed = 40001
-    case missingURL = 40002
-    case missingRequest = 40003
-    case authenticationError = 40100
-    case invalidToken = 40300
-    case missingResponse = 41000
-    case missingData = 41001
-    case unableToDecode = 42200
-    case clientError = 49900
-    case serverError = 50000
-    case unknownError = 77777
-    case isNotReachability = 49901
+    case badRequest 			= 40000
+    case encodingFailed 		= 40001
+    case missingURL 			= 40002
+    case missingRequest 		= 40003
+	case deprecatedRequest 		= 40004
+    case authenticationError 	= 40100
+    case invalidToken 			= 40300
+    case missingResponse 		= 41000
+    case missingData 			= 41001
+    case unableToDecode 		= 42200
+    case clientError 			= 49900
+	case isNotReachability 		= 49901
+    case serverError 			= 50000
+    case unknownError 			= 77777
+
     
     public var description: String {
         switch self {
@@ -25,6 +27,8 @@ public enum APIErrorCode: Int {
             return "URL is nil."
         case .missingRequest:
             return "Request is nil."
+		case .deprecatedRequest:
+			return "Request is deprecated"
         case .authenticationError:
             return "You need to be authenticated first."
         case .invalidToken:

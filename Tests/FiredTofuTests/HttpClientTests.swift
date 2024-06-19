@@ -4,6 +4,16 @@ import Combine
 
 final class HttpClientTests: XCTestCase {
 	
+	override func setUp() {
+		MockURLProtocol.error = nil
+		MockURLProtocol.requestHandler = nil
+	}
+
+	override func tearDown() {
+		MockURLProtocol.error = nil
+		MockURLProtocol.requestHandler = nil
+	}
+	
     func testInitWithURLSession_shouldRoutWithDefaultDecisions() throws {
 		let config = URLSessionConfiguration.ephemeral
 		config.protocolClasses = [MockURLProtocol.self]
