@@ -52,9 +52,9 @@ public enum APIErrorCode: Int {
 }
 
 public struct APIError: Error, LocalizedError {
-    let statusCode: Int
-    let message: String
-    let details: String?
+	public let statusCode: Int
+	public let message: String
+	public let details: String?
     
     public init(_ code: Int, _ message: String, _ details: String? = nil) {
         self.statusCode = code
