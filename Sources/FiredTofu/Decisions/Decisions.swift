@@ -2,8 +2,8 @@ import Foundation
 
 open class Decisions {
     
-    static let normalQueue = DispatchQueue(label: "normalQueue")
-    static let priorityQueue = DispatchQueue(label: "priorityQueue", qos: .userInteractive)
+    static public let normalQueue = DispatchQueue(label: "normalQueue")
+    static public let priorityQueue = DispatchQueue(label: "priorityQueue", qos: .userInteractive)
     
     class func defaults(
 		urlSession: URLSession,
