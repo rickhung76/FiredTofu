@@ -2,10 +2,10 @@ import Foundation
 
 open class Decisions {
     
-    static public let normalQueue = DispatchQueue(label: "normalQueue")
-    static public let priorityQueue = DispatchQueue(label: "priorityQueue", qos: .userInteractive)
+	public static let normalQueue = DispatchQueue(label: "normalQueue")
+	public static let priorityQueue = DispatchQueue(label: "priorityQueue", qos: .userInteractive)
     
-    class func defaults(
+	public class func defaults(
 		urlSession: URLSession,
 		refreshTokenDecision: RefreshTokenDecision? = nil
 	) -> [Decision] {
@@ -20,7 +20,7 @@ open class Decisions {
 		return decisions.compactMap({$0})
     }
     
-	class func refreshToken(session: URLSession) -> [Decision] {
+	public class func refreshToken(session: URLSession) -> [Decision] {
         return [
             BuildRequestDecision(),
             SendRequestDecision(session: session, isPriority: true),
