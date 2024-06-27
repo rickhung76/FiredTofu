@@ -87,7 +87,7 @@ final class HttpClientTests: XCTestCase {
 		
 		let _ = client.send(request).sink { completion in
 			switch completion {
-			case .failure(let failure):
+			case .failure(_):
 				XCTFail()
 			case .finished:
 				exp.fulfill()
@@ -154,7 +154,7 @@ final class HttpClientTests: XCTestCase {
 		
 		Task {
 			do {
-				let response = try await client.send(request)
+				let _ = try await client.send(request)
 				XCTFail()
 			} catch {
 				XCTAssertEqual(error.localizedDescription, errorCode.description)
